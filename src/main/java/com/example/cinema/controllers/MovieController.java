@@ -38,10 +38,11 @@ public class MovieController {
     }
 
 //    Third route
-//    public ResponseEntity<List<Movie>> getPublishedMovies(){
-////        List<Movie> movie = movieService.getPublishedMovies();
-//        return new ResponseEntity<>(movieService.getPublishedMovies(), HttpStatus.OK);
-//    }
+    @GetMapping
+    public ResponseEntity<List<Movie>> getPublishedMovies(){
+//        List<Movie> movie = movieService.getPublishedMovies();
+        return new ResponseEntity<>(movieService.getPublishedMovies(), HttpStatus.OK);
+    }
 
 
 
