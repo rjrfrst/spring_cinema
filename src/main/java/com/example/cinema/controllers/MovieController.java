@@ -26,8 +26,16 @@ public class MovieController {
     @PostMapping //Everytime I post a request, I can create a new movie.
     public ResponseEntity<String> newMovie(@RequestBody Movie movie){
         movieService.addMovie(movie);
-        return new ResponseEntity<>(movie.getTitle(), HttpStatus.CREATED);
+        //now movie has an id
+        return new ResponseEntity<>(movie.getTitle(), HttpStatus.CREATED); //This will only show the title in Postman
     }
+
+    //This is the alternative, by using the movie object it will get the entire movie object.
+//    @PostMapping //Everytime I post a request, I can create a new movie.
+//    public ResponseEntity<Movie> newMovie(@RequestBody Movie movie){
+//        movieService.saveMovie(movie);
+//        return new ResponseEntity<>(movie, HttpStatus.CREATED);
+//    }
 
 
 //    Second route
@@ -44,8 +52,6 @@ public class MovieController {
         return new ResponseEntity<>(movieService.getPublishedMovies(), HttpStatus.OK);
     }
 
-
-
-
+    
 
 } //last curly bracket

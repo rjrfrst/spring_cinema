@@ -23,9 +23,10 @@ public class Movie {
     private int duration;
 
     //Constructor
-    public Movie(String inputTitle, String inputRating){
+    public Movie(String inputTitle, String inputRating, int inputDuration){
         this.title = inputTitle;
         this.rating = inputRating;
+        this.duration = inputDuration;
     }
 
     //Default constructor
